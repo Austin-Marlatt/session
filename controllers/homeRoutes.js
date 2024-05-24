@@ -8,7 +8,7 @@ const { User } = require('../models');
 router.get (`/`, async (req, res) =>{
   let newProf = req.query.displayName;
   const userData = await User.findOne({ where: { display_name: newProf} });
-  const currentUser = userData.get({ plain: true });
+  const currentUser = userData.map((user) => user.get({ plain: true }));
 
   console.log ("HomeRoutes", req.session);
   res.render(`homepage`, {
