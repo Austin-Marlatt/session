@@ -4,8 +4,8 @@ const { User } = require('../models');
 router.get (`/`, async (req, res) =>{
 try {
   let newProf = req.query.displayName;
-  const userData = await User.findOne({ where: { display_name: newProf} });
-  const currentUser = userData.get({ plain: true });
+  const currentUser = await User.findOne({ where: { display_name: newProf} });
+  // const currentUser = userData.get({ plain: true });
   res.render(`homepage`, {
       currentUser,
   });
