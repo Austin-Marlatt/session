@@ -123,10 +123,20 @@ console.log("redirect")
         // use the access token to access the Spotify Web API
         request.get(options, async function (error, response, body) {
 
-          let user = body.display_name;
-        
-          user = await User.sync({display_name: body.display_name, email: body.email, images: body.images[0].url, refresh_token: null, country: body.country});
-        
+                const user = await User.findOrCreate({ 
+            where: {  display_name: body.display_name},
+            defaults: {
+                      email: body.email,
+                      images: body.images[0].url,
+                      refresh_token: null,
+                      country: body.country, },
+        }).then((user, isCreated) => {
+          if(isCreated){
+                 //user created
+                  console.log('created user', user);
+              }
+          }); 
+          
           req.session.save(() => {
             req.session.display_name = body.display_name
           });
