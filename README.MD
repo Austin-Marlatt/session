@@ -16,6 +16,10 @@ Session has multiple features that are intended to draw like-minded users togeth
 
 There is a button for recommendations based on type, genre, tempo, and other characteristics of the user’s preferences. There is a dropdown of every genre Spotify has classified that also gives five suggestions based on matches of the properties of the user’s history.
 
+![image](https://github.com/Austin-Marlatt/session/blob/main/session%20name.png)
+
+![image](https://github.com/Austin-Marlatt/session/blob/main/Session%20user.png)
+
 A chat feature is underway at the bottom of the page. This will link the user with prescribed friends and groups, and also will aid in finding others who have similar musical tastes and curiosities.
 
 Github: https://github.com/mercurioregon/session
